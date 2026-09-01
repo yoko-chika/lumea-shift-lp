@@ -262,7 +262,17 @@ left:120%;
 .formula-grid b { display: block; margin-bottom: 4px; color: var(--accent-dark); font-size: 22px; }
 .formula-grid p { margin: 0; font-size: 12px; color: var(--text); }
 
-.benefits { background: #fff; }
+.benefits {
+  position: relative;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, .94) 0%,
+      rgba(255, 255, 255, .84) 50%,
+      rgba(255, 255, 255, .72) 100%
+    ),
+    url('../img/fv-product.png') center right / cover no-repeat;
+}
 .benefits h2 { text-align: left; }
 .benefit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
 .benefit-grid article { display: grid; place-items: center; min-height: 104px; padding: 14px 8px; border-radius: 14px; background: var(--cream); text-align: center; }
@@ -313,7 +323,7 @@ left:120%;
 .faq-item button span { transition: transform .2s var(--ease); }
 
 .final-cta { position: relative; min-height: 340px; padding: 38px 18px 92px; overflow: hidden; background: var(--bg); }
-.final-bg { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(255,250,244,1) 0%, rgba(255,250,244,.92) 58%, rgba(255,250,244,.34) 100%), url('../img/fv-product.png') center right -80px / auto 100% no-repeat; }
+.final-bg { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(255,250,244,1) 0%, rgba(255,250,244,.92) 58%, rgba(255,250,244,.34) 60%), url('../img/fv-product.png') center right -80px / auto 100% no-repeat; }
 .final-copy { position: relative; z-index: 2; }
 .final-cta h2 { margin: 0 0 10px; font-size: 25px; line-height: 1.52; }
 .final-cta p { margin: 0 0 14px; font-size: 14px; font-weight: 700; }
@@ -1250,10 +1260,18 @@ select:focus-visible {
   }
 
   .fv-copy {
-    width: 48%;
-    max-width: 520px;
+    width: 44%;
+    max-width: 500px;
     margin-right: auto;
     padding-top: 40px;
+
+    /* 左に寄せて、動画との境界に余白を作る */
+    padding-left: 10px;
+    padding-right: 34px;
+  }
+
+  .fv-video-overlay {
+    display: none;
   }
 
   .fv-media {
@@ -1269,13 +1287,7 @@ select:focus-visible {
   }
 
   .fv-video-overlay {
-    background: linear-gradient(
-      90deg,
-      rgba(250, 248, 244, 1) 0%,
-      rgba(250, 248, 244, .96) 35%,
-      rgba(250, 248, 244, .45) 62%,
-      rgba(250, 248, 244, .08) 100%
-    );
+    display: none;
   }
 
   .fv-kicker {
